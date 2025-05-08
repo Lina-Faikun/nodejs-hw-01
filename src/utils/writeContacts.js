@@ -1,3 +1,5 @@
-import { PATH_DB } from '../constants/contacts.js';
+import { writeFile } from "fs/promises";
 
-export const writeContacts = async (updatedContacts) => {};
+export const writeContacts = async (contacts) => {
+  await writeFile("contacts.json", JSON.stringify(contacts, null, 2), "utf-8");
+};
